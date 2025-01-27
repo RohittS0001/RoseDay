@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Rose Day</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffafcc, #ffc8dd, #ffafcc);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: #4d194d;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+        }
+
+        .rose {
+            position: relative;
+            width: 200px;
+            height: 300px;
+        }
+
+        .rose .stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 10px;
+            height: 200px;
+            background: #008000;
+            border-radius: 5px;
+            transform: translateX(-50%);
+        }
+
+        .rose .petals {
+            position: absolute;
+            bottom: 200px;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background: #ff4d6d;
+            border-radius: 50%;
+            transform: translateX(-50%) scale(0);
+            animation: bloom 3s ease-in-out forwards;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            background: #008000;
+            border-radius: 50%;
+            transform-origin: left center;
+        }
+
+        .leaf.left {
+            left: 20%;
+            bottom: 100px;
+            transform: rotate(-45deg) scale(0);
+            animation: growLeaf 3s ease-in-out 1.5s forwards;
+        }
+
+        .leaf.right {
+            right: 20%;
+            bottom: 100px;
+            transform: rotate(45deg) scale(0);
+            animation: growLeaf 3s ease-in-out 1.5s forwards;
+        }
+
+        @keyframes bloom {
+            0% {
+                transform: translateX(-50%) scale(0);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        @keyframes growLeaf {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1.2rem;
+            color: #4d194d;
+        }
+
+        .footer span {
+            font-weight: bold;
+            color: #ff4d6d;
+        }
+
+        .heart {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            color: #ff4d6d;
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) translateX(-50%);
+            }
+            50% {
+                transform: scale(1.2) translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">&#10084;</div>
+    <h1>Happy Rose Day Mimo</h1>
+
+
+    <div class="rose">
+        <div class="stem"></div>
+        <div class="petals"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+    </div>
+
+    <div class="footer">
+        With love <span>Rohit</span>
+    </div>
+</body>
+</html>
